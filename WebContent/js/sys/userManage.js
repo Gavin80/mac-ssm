@@ -1,7 +1,7 @@
 $(function(){
 	$('#s_module').text('系统管理>用户管理');
 
-	$.ajax({
+	/*$.ajax({
 		type : 'post',
 		url : 'initPageSelect.action',
 		dataType : 'json',
@@ -20,7 +20,7 @@ $(function(){
 			}
 		}
 	});
-	query();
+	query();*/
 });
 
 function query(){

@@ -16,32 +16,7 @@ String basePath = request.getScheme() + "://"
 
 <script>
 $(function(){
-	var li = '';
-  var ul = '';
 
-<%
-UserBean user = (UserBean)session.getAttribute(Constants.LOGIN_USER);
-List<PrivilegeBean> list = user.getProcessPlgList();
-for(PrivilegeBean bean : list){%>
-      var $menu = $('#ul_menu');
-<%  if(bean.getId().length() == 2 && !bean.getId().startsWith("16")){%>
-		    li = $('<li></li>'); 
-		    li.append('<a><%=bean.getName() %></a>');
-		    ul = $('<ul></ul>');
-		    li.append(ul);
-<% 	}else if(bean.getId().length() == 4 && !bean.getId().startsWith("16")){
-         if("1509".equals(bean.getId())){%>
-             ul.append('<li><a href=\'<%=bean.getUrl()%>\'><%= bean.getName()%></a></li>');
-<%     }else{%>
-             ul.append('<li><a href=\'<%=basePath%><%=bean.getUrl()%>\'><%= bean.getName()%></a></li>');
-<%     }
-      } %>
-      if('' != li){
-    	  $menu.append(li);
-      }
-      
-<%} %>
-});
 
 function showEdit(){
 	var str = '<div style="width:400px;height:100%; padding:5px;overflow-x:hidden;">' +
