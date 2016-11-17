@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csyq.mapper.UserMapper">
+	
+	<select id="getUsers" resultType="userBean" parameterType="userQueryVo">
+		select userid,username ,password,unitid,ip,mobile from t_user
+		<where>
+			<if test="null != user">
+				<if test="null != user.userId and '' != user.userId">
+					and userid = #{user.userId}
+				</if>
+			</if>
+		</where>
+	</select>
+</mapper>

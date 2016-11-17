@@ -1,0 +1,5 @@
+.rmenu{position: absolute;z-index: 100;overflow: hidden;width: 130px;background-color: #FFCC99; visibility: hidden;}
+.rmenu ul{width:130px;text-align:center;margin:0;padding:0; list-style-type:none;}
+.rmenu ul li{margin-top:0;width:128px;height:25px; line-height:25px;padding:0; border:1px solid #92CBFA; }
+.rmenu ul li a{margin-top:0; display:block;width:100%;height:25px;line-height:25px;background: #E8F7FF;color:#333333;text-decoration:none;}
+.rmenu ul li a:hover{background-color:#B4EDFE;}

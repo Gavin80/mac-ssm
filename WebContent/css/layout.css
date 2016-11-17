@@ -1,0 +1,40 @@
+.div_layout{
+min-width:1100px;
+height:100%;
+margin:0;
+position:relative;
+}
+.div_layout > .div_left{
+width:260px;
+height:99%;
+float: left;display: inline;
+}
+.div_layout > .div_right{
+border:1px solid #cccccc;
+border-left:0;
+height:99%;
+margin-left:260px;
+margin-right:3px;
+}
+.div_layout > .div_right > .div_condition{
+width:99%;
+min-height:30px;
+margin:0 auto;
+padding:5px;
+}
+.div_layout > .div_right > .div_condition > span{
+margin-left:5px;
+}
+.div_layout > .div_right > .div_table{
+border:0;
+width:99%;
+height:545px;
+overflow-y: auto;
+overflow-x:auto;
+}
+.div_layout > .div_right >  .div_bottom{
+width:99%;
+height:30px;
+background-color: #F0F9FB;
+text-align:center;
+}

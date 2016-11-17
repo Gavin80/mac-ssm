@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 标签必须按顺序 否则会报错 如settings必须在typeAliases之前 -->
+	<settings>
+		<!-- 开启缓存 -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- 开启延时加载 -->
+		<setting name="lazyLoadingEnabled" value="true" />
+		<!-- 设置延时时载为按需加载，默认为自动加载，则延时加载没有意义 -->
+		<setting name="aggressiveLazyLoading" value="false" />
+		<!-- 开启自动驼峰命名规则 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<!-- 通过扫描包自动分配别名，如果指定的类有@Alias注解则按注解配置的别名，否则为类名的首字母小写 -->
+		<package name="com.csyq.bean" />
+		<package name="com.csyq.vo" />
+	</typeAliases>
+	
+	<!-- 注册映射文件 有3种方式加载 与spring整合后不需要在配置，spring中会配置 -->
+	<!-- <mappers> -->
+	<!-- 1.利用source和url加载，一次只能加载一个文件 -->
+	<!-- <mapper resource="com/csyq/mapper/UserMapper.xml"/> -->
+	<!-- 2.方式 和class方式注册映射文件， 规则：需要 Mapper接口和Mapper.xml必须在同一个目录下，而且文件名必须保持一致 -->
+	<!-- <mapper class="com.csyq.mapper.UserMapper"/> -->
+	<!-- 3.利用package扫描包路径下所有的.xml文件，规则与方式2样 -->
+	<!-- <package name="com.csyq.mapper"/> -->
+	<!-- </mappers> -->
+</configuration>

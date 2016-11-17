@@ -1,0 +1,25 @@
+@charset "utf-8";
+/**==============
+  蓝色主题
+  ===============
+ **/
+.login-bg{background: #023678 url(../images/default/login-bg.png) repeat-x center top;}
+.login{background: url(../images/default/login-bg2.png) no-repeat center center;}
+.login-box{background: url(../images/default/login-box.png) no-repeat;}
+.loginform li .label{color: #0952a1;}
+.loginform li .inputxt{border:1px solid #7491b5;}
+.loginform .action input{border:1px solid #7491b5; color: #0952a1; background:url(../images/default/login-btn.png) repeat-x;}
+
+/** 登录后的主界面 **/
+.index{background: #0a5c8e;}
+.header{background: url(../images/default/header-bg.png);}
+.header-left{background: url(../images/default/header-left.png) no-repeat;}
+.header-right{background: url(../images/default/header-right.png);}
+.userinfo{;background: url(../images/default/userinfo-bg.png);}
+.userinfo-line{background: url(../images/default/userinfo-line.png) no-repeat 5px 2px;}
+.userinfo-icon{background: url(../images/default/userinfo-icon.png) no-repeat center center;}
+.main{padding-top: 5px;}
+.main-left{background-color: #e5f4fd;}
+.main-left .menu-t{background: #0a5c8e url(../images/default/menu-top.png);text-align: center;}
+.main-left .menu-b{background: #0a5c8e url(../images/default/menu-bot.png);text-align: center;}
+.main-bar{background: url(../images/default/main-bar.png) no-repeat center center;}

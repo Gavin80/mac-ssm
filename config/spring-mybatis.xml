@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd" > 
+  	<!-- 加载数据库配置文件 -->
+  	<context:property-placeholder location="classpath:jdbc.properties"/>
+  	<context:component-scan base-package="com.csyq"></context:component-scan>
+  	
+  	<!-- 初始化数据连接 -->
+  	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+  		<property name="driverClassName" value="${driver}"/>
+  		<property name="url" value="${url}"/>
+  		<property name="username" value="${user}"/>
+  		<property name="password" value="${password}"/>
+  		<property name="initialSize" value="${initialSize}"/>
+  		<property name="maxActive" value="${maxActive}"/>
+  		<property name="maxIdle" value="${maxIdle}"/>
+  		<property name="minIdle" value="${minIdle}"/>
+  		<property name="maxWait" value="${maxWait}"/>
+  	</bean>
+  	
+  	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+  		<property name="dataSource" ref="dataSource"/>
+  		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+  		<property name="mapperLocations" value="classpath:com/csyq/mapper/*.xml"/>
+  	</bean>
+  	
+  	<!-- 使用这里包扫描的方式 自动创建Mapper的代理对象，实例名为Mapper接口的首字母小写，且Mapper接口和Mapper.xml文件必须在同一个包下，并下文件名相同 -->
+  	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+  		<property name="basePackage" value="com.csyq.mapper"/>
+  		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+  	</bean>
+</beans>

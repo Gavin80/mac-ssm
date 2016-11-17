@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* 重置对象 */
+body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dd,fieldset,form,input,select,textarea,button,figure{margin:0}
+ul,ol,menu{list-style:none;margin:0;padding:0}
+body{font-size:12px;line-height:18px; font-family: "宋体", Helvetica, Arial, sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,a img,iframe{border:0 none}
+address,em,i{font-style:normal}
+abbr,acronym{font-variant:normal}
+:active{outline:0 none}
+a:link,a:visited,a:hover{text-decoration: none;}
+input,select,button{vertical-align:middle}
+input,select,button,textarea{font-size:100%;font-family:inherit}
+html,body{height:100%;}
+/**==============
+  登录
+  ===============
+ **/
+.login-bg{background: #023678 url(../images/default/login-bg.png) repeat-x center top; height: 100%;overflow: hidden;}
+.login{position: absolute; left: 50%; top: 50%;margin-top: -368px;margin-left: -580px;width: 1180px; height: 736px;background: url(../images/default/login-bg2.png) no-repeat center center;}
+.login-box{position: absolute; left: 50%; top: 50%;margin-top: -190px;margin-left: -293px;width: 587px; height: 380px;background: url(../images/default/login-box.png) no-repeat;}
+.loginform{width: 270px;margin-top: 200px;margin-right: 20px;float: right;}
+.loginform li{clear: both; height: 32px;}
+.loginform li .label{display:inline-block; float: left; width:48px; color: #0952a1;}
+.loginform li .inputxt{display:inline-block; float: left;border:1px solid #7491b5;width:170px;height: 22px;line-height: 22px;padding:0 2px;}
+.loginform .action{margin-left: 48px;margin-top: 10px;}
+.loginform .action input{border-radius:4px; border:1px solid #7491b5; color: #0952a1; background:url(../images/default/login-btn.png) repeat-x; line-height:24px;padding: 0 8px;}
+.loginform li .inputxtS{width: 92px;display:inline-block; float: left;}
+.loginform li .codeimg{width: 72px; height: 24px;display:inline-block; float: left; margin-left: 6px;}
+/**==============
+  登录后的主界面
+  ===============
+ **/
+.index{background: #0a5c8e;height: 100%;min-width:1268px;}
+/*头部*/
+.header{clear: both;height: 60px;background: url(../images/default/header-bg.png) repeat-x left center;}
+.header-left{float: left;display: inline;width:277px;height:60px;background: url(../images/default/header-left.png) no-repeat;}
+.header-left .logo{height:26px; margin-top:17px;margin-left:22px;}
+.header-right{float: right;width: 83px;height: 60px;background: url(../images/default/header-right.png);}
+/*用户*/
+.userinfo{clear: both;height: 23px;line-height: 23px;background: url(../images/default/userinfo-bg.png);}
+.userinfo-line{float: left;display: inline-block;width: 12px;height: 23px;background: url(../images/default/userinfo-line.png) no-repeat 5px 2px;}
+.userinfo-icon{float: left;display: inline-block;width: 30px;height: 23px;background: url(../images/default/userinfo-icon.png) no-repeat center center;}
+.userinfo-id{color: #b57981}
+.userinfo-ip{color: #b57981;float:right;margin-right:10px;}
+.userinfo-dept{color: #b57981;float:right;margin-right:10px;}
+/*内容*/
+.main{padding-top: 5px;}
+.main-left{width: 168px;float: left;margin-left: 3px;display: inline;height: 99%;background-color: #e5f4fd;}
+.main-left .menu-t{height: 23px; line-height: 23px; background: #0a5c8e url(../images/default/menu-top.png);text-align: center; color: #fff;}
+.main-left .menu-b{height: 23px; line-height: 23px; background: #0a5c8e url(../images/default/menu-bot.png);text-align: center; color: #fff;}
+.main-left .menu-c{padding: 0 10px;}
+.main-bar{float: left;display: inline;width: 9px;height: 99%;background: url(../images/default/main-bar.png) no-repeat center center;}
+.main-right{height: 99%;margin-right: 3px;background: #fff;margin-left: 180px;border-radius: 3px;}
+
+/*菜单*/
+#menu-c ul{width:100%;text-align:center;padding:0;margin:0;list-style-type:none;}
+#menu-c ul li{width:100%;line-height:30px;margin-top:5px;font-size:16px;}
+#menu-c ul li a{width:100%;height:30px;display:block;background: #0a5c8e;color:#FFFFFF;}
+#menu-c ul li:hover ul{display:block;}
+#menu-c ul li ul{padding:0;margin-top:1px;}
+#menu-c ul li ul li{margin-top:0;font-size:14px;}
+#menu-c ul li ul li a{margin-top:0;width:100%;height:25px;line-height:25px;background:#e5f4fd;color:#333333;border:1px solid #e5fcff;}
+#menu-c ul li ul li a:hover{background:#0066CC;}

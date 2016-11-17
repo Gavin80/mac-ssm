@@ -1,0 +1,6 @@
+#div_sum ul{
+list-style-type:none;border:0px solid #CC0066; padding:0; width:100%; margin:0;
+}
+#div_sum ul li{border:1px solid #0066FF; width:200px;height:100px; text-align:center; padding-top:25px; margin:20px 50px 0px 0px;; float:left; background-color: #489DE3; font-size: 14px; font-weight: bold;}
+table tr td{border:1px solid #CCCCCC; height:25px; text-align: center }
+table tr th{border:1px solid #CCCCCC; height:25px; background-color:#999999;}
