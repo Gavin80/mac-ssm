@@ -11,9 +11,15 @@
 
 	<context:component-scan base-package="com.csyq.controller"></context:component-scan>
 	
+	<!-- 启用注解驱动， 如果不配置那么Controller可能没有解析，而配置了mvc:default-servlet-handler后所有的请求会交给DefaultServletHttpRequestHandler处理，当发起业务
+		请求时没有匹配的处理请求类，导致业务请求无法进入Controller中的方法-->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<!-- 不过滤静态资源 -->
+	<mvc:default-servlet-handler/>
+	
 	<!-- 配置视图解析器，如何把handler方法返回的值解析为实际的物理视图 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/"></property>
+		<property name="prefix" value="/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>

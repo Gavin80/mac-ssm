@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<<c:set var="ctx" value="${pageContext.request.contextPath }" scope="request"></c:set>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>无线上网终端管控平台</title>
-<link href="../../css/verify.css" type="text/css" rel="stylesheet">
-<link href="../../css/search.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../../js/plug-in/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link href="${ctx}/css/verify.css" type="text/css" rel="stylesheet">
+<link href="${ctx}/css/search.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${ctx}/js/plug-in/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 
-<script type="text/javascript" src="../../js/plug-in/JQuery/1.7.2.min.js"></script>
-<script type="text/javascript" src="../../js/plug-in/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="../../js/plug-in/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="${ctx}/js/plug-in/JQuery/1.7.2.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/plug-in/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="${ctx}/js/plug-in/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <style type="text/css">
 .div_filelist > .div_table{
 border:0;
@@ -49,17 +50,20 @@ overflow-x:hidden;
           </tr>
     </thead>
     <tbody id="tb_data"> 
+    <c:if test="${null != users }">
     	<c:forEach items="${users}" var="user" varStatus="status">
     		<tr <c:if test="${status.count%2==0}">bgcolor="gray"</c:if>>
-    			<td>${status.index}</td>
+    			<td>${status.index + 1}</td>
     			<td>${user.userId }</td>
     			<td>${user.userName }</td>
-    			<td>${user.idCard }</td>
+    			<td>${user.idcard }</td>
     			<td>${user.unitName }</td>
     			<td>普通用户</td>
     			<td>${user.mobile }</td>
+    			<td><a>编辑</a><a>删除</a></td>
     		</tr>
     	</c:forEach>
+    </c:if>
     </tbody>
    </table>
   </div>
@@ -68,7 +72,7 @@ overflow-x:hidden;
 
 <jsp:include page="../common/right.jsp"></jsp:include>
 </body>
-<script type="text/javascript" src="../../js/common.js"></script>
-<script type="text/javascript" src="../../js/pagination.js"></script>
-<script type="text/javascript" src="../../js/sys/userManage.js"></script>
+<script type="text/javascript" src="${ctx}/js/common.js"></script>
+<script type="text/javascript" src="${ctx}/js/pagination.js"></script>
+<script type="text/javascript" src="${ctx}/js/sys/userManage.js"></script>
 </html>

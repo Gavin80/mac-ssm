@@ -6,7 +6,7 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(value={"classpath:spring-mybatis.xml"})
+@ContextConfiguration(value={"classpath:spring-mybatis.xml","classpath:spring-mvc.xml"})
 public class TestSupport extends AbstractJUnit4SpringContextTests{
 	
 	

@@ -9,6 +9,8 @@
 <body>
 ${pageContext.servletContext.contextPath}
 <br>
-	<a href="/user/getUsers">用户管理</a>
+${pageContext.request.contextPath}
+<br>
+	<a href="${pageContext.servletContext.contextPath }/user/getUsers">用户管理</a>
 </body>
 </html>
