@@ -60,7 +60,7 @@ overflow-x:hidden;
     			<td>${user.unitName }</td>
     			<td>普通用户</td>
     			<td>${user.mobile }</td>
-    			<td><a>编辑</a><a>删除</a></td>
+    			<td><a href="javascript:;" onclick="showDialog('update', '${user.userId}')">编辑</a>&nbsp;&nbsp;<a href="javascript:;" onclick="delUser('${user.userId}')">删除</a></td>
     		</tr>
     	</c:forEach>
     </c:if>
