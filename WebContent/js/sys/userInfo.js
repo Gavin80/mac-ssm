@@ -30,14 +30,14 @@ function initPage(operFlag, userId){
 		$('#userId').attr('readonly', true);
 		$.ajax({
 			type : 'post',
-			url : 'loadUserInfo.action',
-			data : {'user.userId':userId},
+			url : 'getUser',
+			data : {'userId':userId},
 			dataType : 'json',
-			success : function(JSONDATA){
-				if ("1" == JSONDATA.error) {
-					alert(JSONDATA.message);
-				}else {
-					var data = JSONDATA.data;
+			success : function(data){
+//				if ("1" == JSONDATA.error) {
+//					alert(JSONDATA.message);
+//				}else {
+					//var data = JSONDATA.data;
 					$("#userId").val(data.userId);
 					$("#pwd").val(data.password);
 					$("#userName").val(data.userName);
@@ -50,7 +50,7 @@ function initPage(operFlag, userId){
 						roleId.push(role[i].id);
 					}
 					$('#roleId').combobox('setValues', roleId);
-				}
+				//}
 			}
 		});
 	}

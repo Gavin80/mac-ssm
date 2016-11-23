@@ -14,15 +14,23 @@ import com.csyq.vo.UserQueryVo;
 public class UserServiceImpl implements UserService{
 	@Autowired
 	public UserMapper userMapper;
-
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
+	
 	@Override
 	public List<UserBean> getUsers(UserQueryVo userQueryVo) {
 		// TODO Auto-generated method stub
 		return userMapper.getUsers(userQueryVo);
 	}
+	@Override
+	public UserBean getUser(String userId) {
+		// TODO Auto-generated method stub
+		return userMapper.getUser(userId);
+	}
+	
+	
+
 
 	
-	public void setUserMapper(UserMapper userMapper) {
-		this.userMapper = userMapper;
-	}
 }

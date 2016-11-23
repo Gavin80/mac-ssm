@@ -3,7 +3,7 @@ $(function(){
 
 	/*$.ajax({
 		type : 'post',
-		url : 'initPageSelect.action',
+		url : 'initPageSelect',
 		dataType : 'json',
 		success : function(json) {
 			if('0' == json.error){
@@ -19,21 +19,21 @@ $(function(){
 				alert(json.message);
 			}
 		}
-	});
-	query();*/
+	});*/
+	
 });
 
 function query(){
 	curPage = 1;
-	search();
-	initPagination(search);
+//	search();
+//	initPagination(search);
 }
 
 function search(){
 	showWaiting("数据加载中...", $('#div_filelist'));
 	$.ajax({
 		type : 'post',
-		url : 'loadUserListData.action',
+		url : 'getUsers',
 		data : {'page':curPage, 'pageSize':pageSize, 'user.userId':$('#userId').val(),'user.userName':encodeURI($('#userName').val()), 'user.idcard':$('#idCard').val(), 'user.unitId':$('#sel_unit').val()},
 		dataType : 'json',
 		async : false,
@@ -100,7 +100,7 @@ function delUser(userId){
 	if(window.confirm("确认删除该用户吗?"))
 	$.ajax({
 		type : 'post',
-		url : 'delUserInfo.action',
+		url : 'delUser.action',
 		data : { 'user.userId':userId},
 		dataType : 'json',
 		success : function(json) {

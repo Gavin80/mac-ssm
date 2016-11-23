@@ -7,4 +7,5 @@ import com.csyq.vo.UserQueryVo;
 
 public interface UserMapper {
 	List<UserBean> getUsers(UserQueryVo user);
+	UserBean getUser(String userId);
 }

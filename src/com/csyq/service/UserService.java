@@ -7,4 +7,6 @@ import com.csyq.vo.UserQueryVo;
 
 public interface UserService {
 	public List<UserBean> getUsers(UserQueryVo userQueryVo);
+	
+	public UserBean getUser(String userId);
 }

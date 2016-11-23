@@ -38,6 +38,15 @@ public class UserMapperTest extends TestSupport{
 		}
 	}
 	
+	@Test
+	public void testGetUser() {
+		//UserMapper userMapper = (UserMapper) ac.getBean("userMapper");
+		UserBean user = userMapper.getUser("root");
+		
+		System.out.println(user);
+		System.out.println(user.getRoles());
+	}
+	
 	
 
 	public UserMapper getUserMapper() {

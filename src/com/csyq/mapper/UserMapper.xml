@@ -14,4 +14,21 @@
 			</if>
 		</where>
 	</select>
+	
+	<select id="getUser" resultMap="userResultMap" parameterType="string">
+		select u.userid,u.username ,u.password,u.unitid,u.ip,u.mobile,ur.roleid roleid,(select name from t_role where id=ur.roleid) name from t_user u,t_user_role ur where u.userid=ur.userid and u.userid = #{userid}
+		
+	</select>
+	
+	<resultMap type="userBean" id="userResultMap">
+		<result column="userid" property="userId"/>
+		<result column="username" property="userName"/>
+		<result column="password" property="password"/>
+		<result column="unitid" property="unitId"/>
+		<result column="ip" property="ip"/>
+		<collection property="roles" ofType="roleBean">
+			<id column="roleid" property="id"/>
+			<result column="name" property="name"/>
+		</collection>
+	</resultMap>
 </mapper>
